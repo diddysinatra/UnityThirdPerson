@@ -12,6 +12,7 @@ public class PlayerMove_Component : uScriptCode
    public PlayerMove ExposedVariables = new PlayerMove( ); 
    #pragma warning restore 414
    
+   public System.Single Threshold { get { return ExposedVariables.Threshold; } set { ExposedVariables.Threshold = value; } } 
    
    void Awake( )
    {
@@ -50,11 +51,6 @@ public class PlayerMove_Component : uScriptCode
    #if UNITY_EDITOR
       void OnDrawGizmos( )
       {
-         {
-            GameObject gameObject;
-            gameObject = GameObject.Find( "Player" ); 
-            if ( null != gameObject ) Gizmos.DrawIcon(gameObject.transform.position, "uscript_gizmo_variables.png");
-         }
       }
    #endif
 }
